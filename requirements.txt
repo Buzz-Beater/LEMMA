@@ -1,0 +1,9 @@
+numpy
+matplotlib
+torch
+pathlib
+Pillow
+ffmpeg-python
+opencv-python
+joblib
+

@@ -1,0 +1,69 @@
+TRAIN:
+  ENABLE: True
+  DATASET: lemma_seg
+  BATCH_SIZE: 64
+  EVAL_PERIOD: 1
+  CHECKPOINT_PERIOD: 1
+  AUTO_RESUME: True
+  CHECKPOINT_FILE_PATH: '/home/baoxiong/Projects/LEMMA/experiments/intermediate/pretrained/I3D_8x8_R50.pkl'
+  CHECKPOINT_TYPE: "caffe2"
+EXP:
+  IMG_TYPE: "rgb"
+  LABEL_TYPE: "hoi"
+  VIEW_TYPE: "tpv"
+  MODEL_TYPE: "plain"
+  SUPERVISION: "none"
+  TASK: "rec"
+  VIDEO_TYPE: "all"
+DATA:
+  NUM_FRAMES: 8
+  SAMPLING_RATE: 8
+  TRAIN_JITTER_SCALES: [256, 320]
+  TRAIN_CROP_SIZE: 224
+  TEST_CROP_SIZE: 256
+  GT_LIST_DIR: "/home/baoxiong/Datasets/annotations"
+  INPUT_CHANNEL_NUM: [3]
+RESNET:
+  NUM_GROUPS: 1
+  ZERO_INIT_FINAL_BN: True
+  WIDTH_PER_GROUP: 64
+  DEPTH: 50
+  TRANS_FUNC: bottleneck_transform
+  STRIDE_1X1: False
+  NUM_BLOCK_TEMP_KERNEL: [[3], [4], [6], [3]]
+NONLOCAL:
+  LOCATION: [[[]], [[]], [[]], [[]]]
+  GROUP: [[1], [1], [1], [1]]
+  INSTANTIATION: softmax
+BN:
+  USE_PRECISE_STATS: True
+  NUM_BATCHES_PRECISE: 200
+  MOMENTUM: 0.1
+  WEIGHT_DECAY: 0.0
+SOLVER:
+  BASE_LR: 0.025
+  LR_POLICY: cosine
+  MAX_EPOCH: 100
+  MOMENTUM: 0.9
+  WEIGHT_DECAY: 1e-4
+  WARMUP_EPOCHS: 34
+  WARMUP_START_LR: 0.0025
+  OPTIMIZING_METHOD: sgd
+MODEL:
+  NUM_CLASSES: 25
+  ARCH: i3d
+  BACKBONE_NAME: ResNet
+  MODEL_NAME: FusedModel
+  LOSS_FUNC: bce_withlogits
+  DROPOUT_RATE: 0.5
+TEST:
+  ENABLE: True
+  BATCH_SIZE: 64
+  CHECKPOINT_TYPE: "caffe2"
+DATA_LOADER:
+  NUM_WORKERS: 16
+  PIN_MEMORY: True
+NUM_GPUS: 4
+NUM_SHARDS: 1
+RNG_SEED: 0
+OUTPUT_DIR: .
