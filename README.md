@@ -16,7 +16,7 @@ For the dataset, please check out our [website](https://sites.google.com/view/le
 
 # Dependencies
 
-Our code is adapted from the [SlowFast network repo](https://github.com/facebookresearch/SlowFast), we here gratefully thank the authors for open-sourcing. Please check that the basic requirements from this repo is satisfied.
+Our code is adapted from the [SlowFast network repo](https://github.com/facebookresearch/SlowFast), please check the basic requirements from this repo is satisfied.
 
 Additional dependencies include:
 * numpy
@@ -49,5 +49,20 @@ python pred_main.py --model featurebank --use_extra True --extra tpv --task Fals
 ```
 This is running the LFG model with extra tpv features provided for the action anticipation task. Similarly, paths should be correctly set to run this experiment.
 
+# Citation
+
+If you find the paper and/or the code helpful, please cite
+```
+@inproceedings{jia2020lemma,
+	author={Jia, Baoxiong and Chen, Yixin and Huang, Siyuan and Zhu, Yixin and Zhu, Song-Chun}, 
+    title={LEMMA: A Multiview Dataset for Learning Multi-agent Multi-view Activities}, 
+    booktitle={Proceedings of the European Conference on Computer Vision (ECCV)}, 
+    year={2020}
+}
+```
+
+# Acknowledgement
+
+We here gratefully thank the authors from [SlowFast network](https://github.com/facebookresearch/SlowFast) for open-sourcing their code.
 
 
