@@ -16,7 +16,7 @@ For the dataset, please check out our [website](https://sites.google.com/view/le
 
 # Dependencies
 
-Our code is adapted from the [SlowFast network repo](https://github.com/facebookresearch/SlowFast), please check the basic requirements from this repo is satisfied.
+Our code is adapted from the [SlowFast network repo](https://github.com/facebookresearch/SlowFast), please check that the basic requirements from this repo are satisfied.
 
 Additional dependencies include:
 * numpy
