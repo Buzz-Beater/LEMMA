@@ -54,7 +54,7 @@ This is running the LFG model with extra tpv features provided for the action an
 If you find the paper and/or the code helpful, please cite
 ```
 @inproceedings{jia2020lemma,
-	author={Jia, Baoxiong and Chen, Yixin and Huang, Siyuan and Zhu, Yixin and Zhu, Song-Chun}, 
+    author={Jia, Baoxiong and Chen, Yixin and Huang, Siyuan and Zhu, Yixin and Zhu, Song-Chun}, 
     title={LEMMA: A Multiview Dataset for Learning Multi-agent Multi-view Activities}, 
     booktitle={Proceedings of the European Conference on Computer Vision (ECCV)}, 
     year={2020}
