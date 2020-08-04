@@ -4,7 +4,7 @@ This repo contains code for our ECCV 2020 paper.
 
 [LEMMA: A Multi-view Dataset for <ins>LE</ins>arning <ins>M</ins>ulti-agent <ins>M</ins>ulti-task <ins>A</ins>ctivities](https://arxiv.org/pdf/2007.15781.pdf)
 
-Baoxiong Jia, Yixin Chen, Siyuan Huang, Yixin Zhu, Song-chun Zhu
+Baoxiong Jia, Yixin Chen, Siyuan Huang, Yixin Zhu, Song-Chun Zhu
 
 *Proceedings of the European Conference on Computer Vision (ECCV)*, 2020
 
@@ -63,6 +63,8 @@ If you find the paper and/or the code helpful, please cite
 
 # Acknowledgement
 
-We here gratefully thank the authors from [SlowFast network](https://github.com/facebookresearch/SlowFast) for open-sourcing their code.
+We  thank  (i)  Tao  Yuan  at  UCLA  for  designing  the  an-notation  tool,  (ii)  Lifeng  Fan,  Qing  Li,  Tengyu  Liu  at  UCLA  and  ZhouqianJiang for helpful discussions, and (iii) colleagues from UCLA VCLA for assistingthe endeavor of post-processing this massive dataset.
+
+We also gratefully thank the authors from [SlowFast network](https://github.com/facebookresearch/SlowFast) for open-sourcing their code.
 
 
