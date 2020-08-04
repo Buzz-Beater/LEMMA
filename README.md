@@ -47,7 +47,7 @@ A smple command for running the anticipation would be
 ```
 python pred_main.py --model featurebank --use_extra True --extra tpv --task False 
 ```
-This is running the LFG model with extra tpv features provided for the action anticipation task. Similarly, paths should be correctly set to run this experiment.
+This is running the LFB model with extra tpv features provided for the action anticipation task. Similarly, paths should be correctly set to run this experiment.
 
 # Citation
 
