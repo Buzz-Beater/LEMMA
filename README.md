@@ -49,6 +49,10 @@ python pred_main.py --model featurebank --use_extra True --extra tpv --task Fals
 ```
 This is running the LFB model with extra tpv features provided for the action anticipation task. Similarly, paths should be correctly set to run this experiment.
 
+### Path Setting
+To run the experiments correctly, you need to change file path in yaml file as well as ```config/config.py```. You can find the meaning of each path corresponding to their variable name as well as the sample path listed in codes. To correctly run for **action/task anticipation**, we provided an feature extraction file in ```utils/exp_utils/extract_feature.py```. You will need to change the ```sys.path.append()``` (for running this file directly as script), ```model_cfg``` (for selecting model setting), ```cfg.OUTPUT_DIR``` (for output directory of features), ```cfg.TRAIN.CHECKPOINT_FILE_PATH``` (model checkpoint to use), for running this script directly. For these paths, you can change them directly in the file, or the first two in the file or arguments and change ```cfg.{}``` in the yaml file.
+
+
 # Citation
 
 If you find the paper and/or the code helpful, please cite
