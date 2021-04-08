@@ -4,7 +4,7 @@ This repo contains code for our ECCV 2020 paper.
 
 [LEMMA: A Multi-view Dataset for <ins>LE</ins>arning <ins>M</ins>ulti-agent <ins>M</ins>ulti-task <ins>A</ins>ctivities](https://arxiv.org/pdf/2007.15781.pdf)
 
-Baoxiong Jia, Yixin Chen, Siyuan Huang, Yixin Zhu, Song-chun Zhu
+Baoxiong Jia, Yixin Chen, Siyuan Huang, Yixin Zhu, Song-Chun Zhu
 
 *Proceedings of the European Conference on Computer Vision (ECCV)*, 2020
 
@@ -47,7 +47,11 @@ A smple command for running the anticipation would be
 ```
 python pred_main.py --model featurebank --use_extra True --extra tpv --task False 
 ```
-This is running the LFG model with extra tpv features provided for the action anticipation task. Similarly, paths should be correctly set to run this experiment.
+This is running the LFB model with extra tpv features provided for the action anticipation task. Similarly, paths should be correctly set to run this experiment.
+
+### Path Setting
+To run the experiments correctly, you need to change file path in yaml file as well as ```config/config.py```. You can find the meaning of each path corresponding to their variable name as well as the sample path listed in codes. To correctly run for **action/task anticipation**, we provided an feature extraction file in ```utils/exp_utils/extract_feature.py```. You will need to change the ```sys.path.append()``` (for running this file directly as script), ```model_cfg``` (for selecting model setting), ```cfg.OUTPUT_DIR``` (for output directory of features), ```cfg.TRAIN.CHECKPOINT_FILE_PATH``` (model checkpoint to use), for running this script directly. For these paths, you can change them directly in the file, or the first two in the file or arguments and change ```cfg.{}``` in the yaml file.
+
 
 # Citation
 
@@ -63,6 +67,8 @@ If you find the paper and/or the code helpful, please cite
 
 # Acknowledgement
 
-We here gratefully thank the authors from [SlowFast network](https://github.com/facebookresearch/SlowFast) for open-sourcing their code.
+We  thank  (i)  Tao  Yuan  at  UCLA  for  designing  the  an-notation  tool,  (ii)  Lifeng  Fan,  Qing  Li,  Tengyu  Liu  at  UCLA  and  ZhouqianJiang for helpful discussions, and (iii) colleagues from UCLA VCLA for assistingthe endeavor of post-processing this massive dataset.
+
+We also gratefully thank the authors from [SlowFast network](https://github.com/facebookresearch/SlowFast) for open-sourcing their code.
 
 
