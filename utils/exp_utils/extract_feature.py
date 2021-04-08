@@ -69,9 +69,20 @@ def extract_feature(val_loader, model, test_meter, cfg, save=True, vis=True):
 
         index_file = Path(cfg.DATA.SAVE_PATH) / '{}_{}_{}_{}'.format(cfg.EXP.TASK, cfg.EXP.VIEW_TYPE,
                                                         cfg.EXP.IMG_TYPE, cfg.EXP.VIDEO_TYPE) / 'vid_idx_to_name.p'
-
-        with index_file.open('rb') as f:
-             vid_idx_to_name = pickle.load(f)
+        if not index_file.exists():
+            vid_idx_to_name = []
+            vid_name_to_idx = {}
+            with Path(cfg.DATA.GT_LIST_DIR) / 'full' / '{}_{}_frames.p'.format(cfg.EXP.task, cfg.EXP.VIEW_TYPE).open('rb') as f:
+                frame_infos = pickle.load(f)
+            for frame_info in frame_infos:
+                vid_name = frame_info[0]
+                if vid_name not in vid_name_to_idx.keys():
+                    idx = len(vid_name_to_idx)
+                    vid_name_to_idx[vid_name] = idx
+                    vid_idx_to_name.append(vid_name)
+        else:
+            with index_file.open('rb') as f:
+                vid_idx_to_name = pickle.load(f)
 
         (
             tp, tn, fp, fn,
@@ -258,7 +269,7 @@ if __name__ == '__main__':
     model_type = args.model_type
     model_name = args.model_name
 
-    model_cfg = '/home/baoxiong/Projects/DOME/experiments/src/settings/{}_fpv_plain_hoi.yaml'.format(model_name)
+    model_cfg = '/home/baoxiong/Projects/LEMMA/experiments/src/settings/{}_fpv_plain_hoi.yaml'.format(model_name)
     cfg.merge_from_file(model_cfg)
     cfg.EXP.VIEW_TYPE = view_type
     cfg.EXP.MODEL_TYPE = model_type
